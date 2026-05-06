@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     PORTFOLIO — David Moinse · Data Analyst
-     Fichier : index.html
-     À déposer à la racine de ton dépôt GitHub Pages
-     (nom du dépôt : ton-username.github.io)
+     PORTFOLIO — David Moinse · Etudiant B3 Data Analyst&IA
      ============================================================ -->
 <html lang="fr">
 <head>
-
-  <!-- Encodage des caractères : indispensable pour les accents français -->
   <meta charset="UTF-8">
 
-  <!-- Rend la page responsive sur mobile (zoom automatique désactivé) -->
+  <!-- responsive sur mobile (zoom automatique désactivé) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Titre qui s'affiche dans l'onglet du navigateur -->
   <title>David Moinse — Data Analyst</title>
 
-  <!-- Préconnexion à Google Fonts pour accélérer le chargement -->
+  <!-- Google Fonts pour accélérer le chargement -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <!-- Chargement des polices :
-       - Space Mono  : police monospace, utilisée pour les labels techniques
-       - Syne        : police principale, utilisée pour les titres et le corps -->
+  <!-- Chargement des polices  -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -36,8 +29,6 @@
 
   /* ============================================================
      VARIABLES CSS (palette de couleurs)
-     Accessible partout avec var(--nom-variable)
-     Pour changer une couleur : modifie-la ici, elle change partout.
      ============================================================ */
   :root {
     --bg:          #050a12;                    /* Fond principal — noir profond (espace) */
@@ -55,14 +46,11 @@
 
   /* ============================================================
      COMPORTEMENT DU SCROLL
-     scroll-behavior: smooth = les ancres (#profil, #projets...)
-     défilent doucement au lieu de sauter brutalement.
-     C'est ce qui rend les liens du menu agréables à utiliser.
      ============================================================ */
   html { scroll-behavior: smooth; }
 
   /* ============================================================
-     STYLES DU BODY (page entière)
+     STYLES DU BODY 
      ============================================================ */
   body {
     background: var(--bg);
@@ -74,10 +62,7 @@
   }
 
   /* ============================================================
-     CANVAS DES ÉTOILES
-     Position fixe = reste en arrière-plan même quand on défile.
-     z-index: 0 = sous tout le contenu.
-     pointer-events: none = les clics passent à travers.
+     CANVAS DES ÉTOILES Position
      ============================================================ */
   #stars {
     position: fixed;
@@ -87,9 +72,7 @@
   }
 
   /* ============================================================
-     BARRE DE NAVIGATION (menu fixe en haut)
-     position: fixed = reste en haut même en scrollant
-     backdrop-filter: blur = effet de verre dépoli sur le fond
+     BARRE DE NAVIGATION 
      ============================================================ */
   nav {
     position: fixed;
@@ -116,10 +99,7 @@
   /* Liste des liens de navigation */
   nav ul { list-style: none; display: flex; gap: 2.5rem; }
 
-  /* Style de chaque lien du menu
-     IMPORTANT : les href="#profil", "#competences" etc. correspondent
-     aux id="" des sections HTML plus bas — c'est ce qui rend
-     les liens cliquables et fait défiler jusqu'à la bonne section. */
+  /* Style de chaque lien du menu */
   nav a {
     font-size: 13px;
     letter-spacing: 0.06em;
@@ -173,12 +153,7 @@
   }
 
   /* ============================================================
-     TITRE PRINCIPAL (H1) — ton nom "David Moinse"
-     clamp(min, préféré, max) = taille fluide selon la largeur de l'écran :
-       - 2rem    sur très petit écran (mobile étroit)
-       - 4.5vw   taille relative à la largeur de la fenêtre
-       - 3.5rem  maximum (environ 56px) — réduit par rapport à l'original
-     Pour agrandir : augmente le 3ème chiffre. Pour réduire : diminue-le.
+     TITRE PRINCIPAL (H1) 
      ============================================================ */
   h1 {
     font-size: clamp(2rem, 4.5vw, 3.5rem);  /* ← taille réduite ici */
@@ -188,7 +163,6 @@
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
   }
-  /* La partie "Moinse" s'affiche en cyan */
   h1 span { color: var(--cyan); }
 
   /* Sous-titre de la hero */
@@ -200,7 +174,6 @@
     line-height: 1.8;
   }
 
-  /* Ligne de contact (ville, téléphone, email) */
   .hero-contact {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
@@ -231,10 +204,10 @@
     align-items: center;
     gap: 0.5rem;
   }
-  /* Bouton principal : fond cyan, texte noir */
+  /* Bouton principal */
   .btn-primary { background: var(--cyan); color: var(--bg); font-weight: 700; }
   .btn-primary:hover { background: #7be8f0; }
-  /* Bouton secondaire : bordure fine, pas de fond */
+  /* Bouton secondaire */
   .btn-ghost { border: 1px solid var(--border); color: var(--text-muted); }
   .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
 
@@ -257,7 +230,6 @@
 
   /* ============================================================
      SÉPARATEURS (lignes horizontales entre sections)
-     Dégradé transparent → couleur → transparent = effet élégant
      ============================================================ */
   .divider {
     width: 100%;
@@ -267,7 +239,6 @@
 
   /* ============================================================
      CONTAINER CENTRÉ (utilisé par toutes les sections de contenu)
-     max-width: 1100px + margin: auto = centrage horizontal
      ============================================================ */
   .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
 
@@ -308,7 +279,7 @@
   .badge-amber { background: rgba(240,160,48,0.1);  color: var(--amber); border: 0.5px solid rgba(240,160,48,0.25); }
 
   /* ============================================================
-     SECTION COMPÉTENCES — grille de cartes de skills
+     SECTION COMPÉTENCES
      auto-fit + minmax = le nombre de colonnes s'adapte automatiquement
      ============================================================ */
   .skills-section { padding-bottom: 5rem; }
